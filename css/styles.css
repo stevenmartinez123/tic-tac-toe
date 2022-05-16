@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Bangers';
+    src: url(../fonts/Bangers/Bangers-Regular.ttf);
+}
+
+body {
+    background-color: #EDD5BD;
+    display: flex;
+    flex-direction: column;
+}
+
+#gameHeader {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 30px;
+    font-family: 'Bangers', 'Helvetica';
+    margin-bottom: 3rem;
+}
+
+.gameboard {
+    align-self: center;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.gameboard-div {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
