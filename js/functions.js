@@ -5,10 +5,30 @@ function Player(name) {
         winner: true
     };
 };
-
-var playerOne = Player('Bob');
-var playerTwo = Player('Tanner');
+var playerOne;
+var playerTwo;
 const game = new Array(9);
+
+(function startGame() {
+    let startBtn = document.querySelector('#startGameBtn');
+    startBtn.addEventListener('click', function(){
+        let playerOneName = document.querySelector('#playerOne').value;
+        playerOneName = playerOneName.length > 0 ? playerOneName : 'Player One';
+        let playerTwoName = document.querySelector('#playerTwo').value;
+        playerTwoName = playerTwoName.length > 0 ? playerTwoName : 'Player Two';
+
+        playerOne = Player(playerOneName);
+        playerTwo = Player(playerTwoName);
+
+        let gameBoardContainer = document.querySelector('#gameBoardContainer');
+        let nameContainer = document.querySelector('#playerNameContainer');
+
+        gameBoardContainer.style.display = 'flex';
+        nameContainer.style.display = 'none';
+        event.preventDefault();
+    });
+
+})();
 
 (function populateGameBoard() {
     let board = document.querySelector('.gameboard');
@@ -20,6 +40,7 @@ const game = new Array(9);
         div.addEventListener('click', XorO)
     }
 })();
+
 
 
 function XorO() {

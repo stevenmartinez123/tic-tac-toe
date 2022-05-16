@@ -21,6 +21,8 @@ body {
 
 #gameBoardContainer {
     display: none;
+    justify-content: center;
+
 }
 
 .gameboard {
