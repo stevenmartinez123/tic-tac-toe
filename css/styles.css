@@ -24,11 +24,14 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    border: 2px solid black;
 }
 
 .gameboard-div {
-    border: 1px solid black;
+    font-family: 'Bangers', 'Helvetica';
     display: flex;
+    border: 1px solid black;
     justify-content: center;
     align-items: center;
+    font-size: 7rem;
 }
