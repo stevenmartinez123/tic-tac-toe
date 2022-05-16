@@ -11,9 +11,30 @@
 </head>
 
 <header>
-    <h1 id="gameHeader">Tic-Tac-Toe!</h1>
+        <h1 id="gameHeader">Tic-Tac-Toe!</h1>
 </header>
 <body>
-    <div class="gameboard"></div>
+    <section id="playerNameContainer">
+            <form class="playerNameDiv">
+                <div class="playerInput">
+                    <label for="playerOne">Name:</label>
+                    <input type="text" id="playerOne" name="playerOne" placeholder="Player One">
+                    <label for="playerTwo">Name:</label>
+                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Player Two">
+                </div>
+                <div id="buttonContainer">
+                    <button id="startGameBtn">Start Game</button>
+                </div>
+            </form>
+    </section>
+
+    <section id="gameBoardContainer">
+        <div class="gameboard"></div>
+    </section>
+
+    <section id="gameOverContainer">
+        <div class="gameOver"></div>
+    </section>
+
 </body>
 </html>

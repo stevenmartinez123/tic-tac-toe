@@ -6,12 +6,12 @@ function Player(name) {
     };
 };
 
-const playerOne = Player('Bob');
-const playerTwo = Player('Jim');
+var playerOne = Player('Bob');
+var playerTwo = Player('Tanner');
 const game = new Array(9);
 
 (function populateGameBoard() {
-    var board = document.querySelector('.gameboard');
+    let board = document.querySelector('.gameboard');
     for (let i = 0; i < game.length; i++) {
         let div = document.createElement('div');
         div.className = 'gameboard-div';
@@ -64,7 +64,24 @@ function winCheck(letter) {
 };
 
 function gameOver(letter) {
-    
+    let container = document.querySelector('.gameOver');
+    let gameboard = document.querySelector('.gameboard');
+    let heading = document.createElement('h1');
+    let button = document.createElement('button');
+    button.id = 'playAgainBtn';
+    heading.id = 'gameOverHeading';
+    container.appendChild(heading);
+    button.textContent = 'Play Again';
+    container.appendChild(button);
+   // document.body.remove(gameboard);
+    if (letter == 'X') {
+        heading.textContent = `${playerOne.name} Wins!`;
+    } else {
+        heading.textContent = `${playerTwo.name} Wins!`;
+    }
+    button.addEventListener('click', function(){
+        location.reload();
+    });
 };
 
 

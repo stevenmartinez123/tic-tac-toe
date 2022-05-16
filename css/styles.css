@@ -5,8 +5,9 @@
 
 body {
     background-color: #EDD5BD;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 #gameHeader {
@@ -17,8 +18,12 @@ body {
     margin-bottom: 3rem;
 }
 
+
+#gameBoardContainer {
+    display: none;
+}
+
 .gameboard {
-    align-self: center;
     height: 500px;
     width: 500px;
     display: grid;
@@ -34,5 +39,59 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 7rem;
-    cursor: pointer;
+}
+
+
+#playerNameContainer {
+    font-family: 'Bangers', 'Helvetica';
+    width: 700px;
+    height: 450px;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerNameDiv {
+   display: block;
+   font-size: 2rem;
+}
+
+input {
+    height: auto;
+    width: 200px;
+    font-size: 1.5rem;
+}
+
+#playerOne, #playerTwo, label {
+    border-radius: 10px;
+    font-family: 'Bangers', 'Helvetica';
+}
+
+#playerOne:focus, #playerTwo:focus {
+    outline: none;
+    border: 2px solid teal;
+}
+
+#buttonContainer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.playerInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#startGameBtn {
+    font-family: 'Bangers', 'Helvetica';
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #61AAB3;
 }
