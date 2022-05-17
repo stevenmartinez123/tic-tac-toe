@@ -1,3 +1,5 @@
+
+// factory function to create a player object
 function Player(name) {
     return {
         name, 
@@ -5,10 +7,12 @@ function Player(name) {
         winner: true
     };
 };
+//instantiates player one and two, creates an array to hold tictactoe results
 var playerOne;
 var playerTwo;
 const game = new Array(9);
 
+//IIFE to start game, takes players names from form and displays gameboard
 (function startGame() {
     let startBtn = document.querySelector('#startGameBtn');
     startBtn.addEventListener('click', function(){
@@ -30,6 +34,7 @@ const game = new Array(9);
 
 })();
 
+//IIFE to load gameboard on to the screen 
 (function populateGameBoard() {
     let board = document.querySelector('.gameboard');
     for (let i = 0; i < game.length; i++) {
@@ -41,6 +46,7 @@ const game = new Array(9);
     }
 })();
 
+//function to display X or O on div and adds result to array
 function XorO() {
     if (this.textContent.toString().length > 0) {
         return;
@@ -64,6 +70,7 @@ function XorO() {
 
 };
 
+//checks each choice to see if there is a winning result
 function winCheck(letter) {
 
     if  ((game[0] == letter && game[1] == letter && game[2] == letter) || //horizontal win 1st row
@@ -75,12 +82,13 @@ function winCheck(letter) {
     (game[0] == letter && game[4] == letter && game[8] == letter) || //diagnol win left
     (game[2] == letter && game[4] == letter && game[6] == letter)) { //diagnol win right        
         gameOver(letter);
-    } else if (!game.includes(undefined)) {
+    } else if (!game.includes(undefined)) { //if the array is full then the game will end in draw 
         letter = 'draw';
         gameOver(letter);
     }
 };
 
+//displays that the game is over in a new div 
 function gameOver(letter) {
     let gameBoardContainer = document.querySelector('#gameBoardContainer');
     let container = document.querySelector('#gameOverContainer')
@@ -105,5 +113,3 @@ function gameOver(letter) {
         location.reload();
     });
 };
-
-

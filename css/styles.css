@@ -1,7 +1,9 @@
+/*custom font */
 @font-face {
     font-family: 'Bangers';
     src: url(../fonts/Bangers/Bangers-Regular.ttf);
 }
+/*styling for body*/
 
 body {
     background-color: #EDD5BD;
@@ -9,6 +11,8 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+/*styling for header */
 
 #gameHeader {
     text-align: center;
@@ -18,13 +22,14 @@ body {
     margin-bottom: 3rem;
 }
 
-
+/*styling for the gameboard container, default set to none display*/
 #gameBoardContainer {
     display: none;
     justify-content: center;
 
 }
 
+/*gameboard styling */
 .gameboard {
     height: 500px;
     width: 500px;
@@ -34,6 +39,7 @@ body {
     border: 2px solid black;
 }
 
+/*styling for each div in gameboard */
 .gameboard-div {
     font-family: 'Bangers', 'Helvetica';
     display: flex;
@@ -43,7 +49,7 @@ body {
     font-size: 7rem;
 }
 
-
+/*styling for game over container and player name input container*/
 #playerNameContainer, #gameOverContainer {
     font-family: 'Bangers', 'Helvetica';
     width: 700px;
@@ -58,22 +64,25 @@ body {
     align-items: center;
 }
 
+/*sets gameover container default display to none */
 #gameOverContainer {
     display: none;
-    opacity: 1;
-    transition: opacity 1s;
 }
 
+/*styling for gameover div */
 .gameOver {
     font-size: 4rem;
     text-align: center;
     line-height: 100px;
 }
 
+/*styling to set inputs of player 1 and 2 as a block */
 .playerNameDiv {
    display: block;
    font-size: 2rem;
 }
+
+/*styling fot input of form */
 
 input {
     height: auto;
@@ -81,27 +90,34 @@ input {
     font-size: 1.5rem;
 }
 
+/*styling for input field to round borders and set custom font*/
 #playerOne, #playerTwo, label {
     border-radius: 10px;
     font-family: 'Bangers', 'Helvetica';
 }
+/*sets focus border to teal color in form*/
 
 #playerOne:focus, #playerTwo:focus {
     outline: none;
     border: 2px solid teal;
 }
 
+/*seperates start game button from form text aligns button to center*/
 #buttonContainer {
     margin-top: 50px;
     text-align: center;
 }
 
+/*sets form to center of web page */
 .playerInput {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
+
+/*styling for buttons */
+
 #startGameBtn, #playAgainBtn {
     font-family: 'Bangers', 'Helvetica';
     font-size: 2rem;
