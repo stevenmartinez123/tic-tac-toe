@@ -41,8 +41,6 @@ const game = new Array(9);
     }
 })();
 
-
-
 function XorO() {
     if (this.textContent.toString().length > 0) {
         return;
@@ -77,29 +75,29 @@ function winCheck(letter) {
     (game[0] == letter && game[4] == letter && game[8] == letter) || //diagnol win left
     (game[2] == letter && game[4] == letter && game[6] == letter)) { //diagnol win right
 
-        let board = document.querySelector('.gameboard');
-        board.style.transition = '1s';
-        board.style.opacity = 0;
+        
         gameOver(letter);
     } 
 };
 
 function gameOver(letter) {
-    let container = document.querySelector('.gameOver');
-    let gameboard = document.querySelector('.gameboard');
+    let gameBoardContainer = document.querySelector('#gameBoardContainer');
+    let container = document.querySelector('#gameOverContainer')
+    let gameOver = document.querySelector('.gameOver');
     let heading = document.createElement('h1');
     let button = document.createElement('button');
     button.id = 'playAgainBtn';
     heading.id = 'gameOverHeading';
-    container.appendChild(heading);
+    gameOver.appendChild(heading);
     button.textContent = 'Play Again';
-    container.appendChild(button);
-   // document.body.remove(gameboard);
+    gameOver.appendChild(button);
     if (letter == 'X') {
         heading.textContent = `${playerOne.name} Wins!`;
     } else {
         heading.textContent = `${playerTwo.name} Wins!`;
     }
+        gameBoardContainer.style.display = 'none';
+        container.style.display = 'flex';
     button.addEventListener('click', function(){
         location.reload();
     });

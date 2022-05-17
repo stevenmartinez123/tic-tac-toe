@@ -44,7 +44,7 @@ body {
 }
 
 
-#playerNameContainer {
+#playerNameContainer, #gameOverContainer {
     font-family: 'Bangers', 'Helvetica';
     width: 700px;
     height: 450px;
@@ -56,6 +56,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#gameOverContainer {
+    display: none;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.gameOver {
+    font-size: 4rem;
+    text-align: center;
+    line-height: 100px;
 }
 
 .playerNameDiv {
@@ -90,7 +102,7 @@ input {
     align-items: center;
     gap: 15px;
 }
-#startGameBtn {
+#startGameBtn, #playAgainBtn {
     font-family: 'Bangers', 'Helvetica';
     font-size: 2rem;
     padding: 10px;
