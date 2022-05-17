@@ -73,11 +73,12 @@ function winCheck(letter) {
     (game[1] == letter && game[4] == letter && game[7] == letter) || //vertical win center
     (game[2] == letter && game[5] == letter && game[8] == letter) || //vertical win third row right side
     (game[0] == letter && game[4] == letter && game[8] == letter) || //diagnol win left
-    (game[2] == letter && game[4] == letter && game[6] == letter)) { //diagnol win right
-
-        
+    (game[2] == letter && game[4] == letter && game[6] == letter)) { //diagnol win right        
         gameOver(letter);
-    } 
+    } else if (!game.includes(undefined)) {
+        letter = 'draw';
+        gameOver(letter);
+    }
 };
 
 function gameOver(letter) {
@@ -93,8 +94,10 @@ function gameOver(letter) {
     gameOver.appendChild(button);
     if (letter == 'X') {
         heading.textContent = `${playerOne.name} Wins!`;
-    } else {
+    } else if (letter == 'O') {
         heading.textContent = `${playerTwo.name} Wins!`;
+    } else if (letter == 'draw') {
+        heading.textContent = 'DRAW!';
     }
         gameBoardContainer.style.display = 'none';
         container.style.display = 'flex';
